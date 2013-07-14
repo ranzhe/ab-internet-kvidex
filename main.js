@@ -41,7 +41,7 @@ function parseBalance(text){
 function parseTraffic(text){
     var _text = text.replace(/\s+/, '');
     var val = getParam(_text, null, null, /(-?\d[\d\.,]*)/, replaceFloat, parseFloat);
-    var units = getParam(_text, null, null, /(kb|mb|gb|кб|мб|гб|байт|bytes)/i);
+    var units = getParam(_text, null, null, /(kb|mb|gb|кб|мб|гб|тб|tb|байт|bytes)/i);
     switch(units.toLowerCase()){
       case 'bytes':
       case 'байт':
@@ -55,6 +55,10 @@ function parseTraffic(text){
       case 'гб':
         val = Math.round(val*100)/100;
         break;
+      case 'tb':
+      case 'тб':
+      	val = Math.round(val*1024*100)/100;
+      	break;
     }
     var textval = ''+val;
     if(textval.length > 6)
