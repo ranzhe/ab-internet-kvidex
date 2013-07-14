@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <history>
+    <change major_version="2" version="1" date="2013-07-15">
+      Исправлено падение в ситуациях, когда траффик в кабинете указан в терабайтах
+    </change>
     <change version="2" date="2013-03-08">
-      Исправлено получение трафика (спасибо admin@ranzhe.ru)
+      Исправлено получение трафика
     </change>
 </history>
